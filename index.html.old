@@ -183,13 +183,23 @@
             }
 
 	    .copy {
-		width:100%:
+		width:100%;
 		padding:60px;
 		text-align:center;
 		color:#fff;
 		font-size:14px;
 	    }
+	    .error {
+		margin-top:20px;
+		display:none;
+	    }
 
+            .success {
+		display:none;
+		font-weight:bold;
+		margin-top:130px;
+		font-size:24px;
+	    }
         </style>
     </head>
     <body>
@@ -208,9 +218,16 @@
             </div>
         </div>
         <div class="content">
-            <form>
-                <input type="email" />
+	    <div class="success">
+		Успех! <br/> Мы с вами свяжемся, когда всё будет.
+	    </div>
+            <form onsubmit="event.preventDefault(); send(); return false;">
+                <input  id="email" type="email" />
                 <br />
+		    <div class="error">
+			 Что-то пошло не так
+			 :C
+		    </div>
                 <input type="submit"  id="submit" value="получить приглашение" />
             </form>
         </div>
@@ -258,6 +275,19 @@
             ,speed);
         }
         setInterval("scroll()" ,5000);
+
+	function send() {
+		var email = $('#email').val();
+		$.post('/',  {
+			email:email
+		}).done(function() {
+			$('.success').fadeIn(300);
+			$('form').hide();
+		}).fail(function() {
+			$('.error').fadeIn(300);
+		});
+	}
+
     </script>
     </body>
 </html>
