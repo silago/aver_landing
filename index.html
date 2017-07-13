@@ -10,14 +10,14 @@
                   font-style: normal;
                   font-weight: 400;
                   src:
-                      url(assets/AvenirNextCyr-Regular.woff) format('woff'),
+                      url(/assets/AvenirNextCyr-Regular.woff) format('woff'),
                 }
                 @font-face {
                   font-family: 'AvenirNextCyr';
                   font-style: bold;
                   font-weight: 400;
                   src:
-                      url(assets/AvenirNextCyr-Medium.woff) format('woff'),
+                      url(/assets/AvenirNextCyr-Medium.woff) format('woff'),
                 }
                 * {
                     font-family: 'AvenirNextCyr', Fallback, sans-serif;
@@ -182,6 +182,14 @@
                 text-align:center;
             }
 
+	    .copy {
+		width:100%:
+		padding:60px;
+		text-align:center;
+		color:#fff;
+		font-size:14px;
+	    }
+
         </style>
     </head>
     <body>
@@ -210,10 +218,10 @@
             <div 
                 class="apps">
                 <a href="#">
-                    <img src="assets/app_store.png" />
+                    <img src="/assets/app_store.png" />
                 </a>
                 <a href="#">
-                    <img src="assets/google_play.png" />
+                    <img src="/assets/google_play.png" />
                 </a>
                 <div class="soon">
                     <div>
@@ -221,6 +229,9 @@
                     </div>
                 </div>
         </div>
+	<div class="copy">
+		&copy; super5, 2017
+	</div>
 
     <script>
         function getRandomInt(min, max) {
