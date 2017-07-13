@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<meta charset="utf-8" />
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            /* fonts */
+                @font-face {
+                  font-family: 'AvenirNextCyr';
+                  font-style: normal;
+                  font-weight: 400;
+                  src:
+                      url(/assets/AvenirNextCyr-Regular.woff) format('woff');
+                }
+                @font-face {
+                  font-family: 'AvenirNextCyr';
+                  font-style: bold;
+                  font-weight: 400;
+                  src:
+                      url(/assets/AvenirNextCyr-Medium.woff) format('woff');
+                }
+                * {
+                    font-family: 'AvenirNextCyr', Fallback, sans-serif;
+                }
+            /* end fonts */
+
+            .purple-gradient {
+                background: rgba(255,255,255,1);
+                background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(106,61,173,1) 96%, rgba(106,61,173,1) 100%);
+                background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(96%, rgba(106,61,173,1)), color-stop(100%, rgba(106,61,173,1)));
+                background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(106,61,173,1) 96%, rgba(106,61,173,1) 100%);
+                background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(106,61,173,1) 96%, rgba(106,61,173,1) 100%);
+                background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(106,61,173,1) 96%, rgba(106,61,173,1) 100%);
+                background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(106,61,173,1) 96%, rgba(106,61,173,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#6a3dad', GradientType=1 );
+            }
+            .purple-gradient .text {
+                color: #fff;
+                background: #000;
+                mix-blend-mode: multiply;
+            }
+
+            body {
+                background-color:black;
+                color:#fff;
+            }
+            .header {
+                margin-top:101px;
+                text-align:center;
+            }
+            .header #header span {
+                position:relative;
+            }
+            .header #header span .behonest {
+                width: auto;
+            }
+
+            @media (min-width: 980px) {
+                .header #header span .behonest {
+                    white-space: nowrap;
+                    position: absolute;
+                    right: 100%;
+                    white-space: nowrap;
+                    padding-right: 10px;
+                }
+            
+            }
+
+            .content form {
+                margin-top:137px;
+            }
+            
+            .btm {
+                margin-top:197px;
+            }
+
+            @media (max-width: 980px) {
+                .header .langs {
+                    position:absolute;
+                    top:20px;
+                    left:20px;
+                }
+            }
+
+            @media (min-width: 980px) {
+                .header .langs {
+                    position:absolute;
+                    top:102px;
+                    right:57px;
+                }
+            }
+            .header .langs a {
+                color:#fff;
+                text-decoration:none;
+            }
+            .header .langs a:hover {
+                text-decoration:underline;
+            }
+            .header .langs a.active {
+                color:#fff;
+            }
+
+            .content {
+                text-align:center;
+            }
+            .content form input  
+            {
+                width:222px;
+                box-sizing:border-box;
+                padding:13px;
+                border:0;
+            }
+            .content form #submit {
+                border-radius:3px;
+                background-color:#6437aa;
+                border:0px;
+                margin-top:25px;
+                color: #fff;
+            }
+
+            .btm {
+                text-align:center;
+                    position:relative;
+            }
+            .btm img {
+                display:inline;
+                width:119px;
+            }
+
+            .soon {
+                    font-size: 48px;
+                    position: relative;
+                    top: -8px;
+                    font-weight:bold;
+                    text-align:center;
+                    margin-left:-500px;
+                    width:500px;
+                    float:right;
+                    margin-top:-6px;
+            }
+            .soon {
+
+            }
+            @media (max-width: 980px) {
+                .soon {
+                    float:none;
+                    margin:0 auto;
+                    margin-top:10px;
+                    width:100%;
+                }
+            }
+
+            .soon > div {
+                position:relative;
+            }
+
+            .block19 {
+                width:19%;
+                display:inline-block;
+                box-sizing:border-box;
+            }
+
+            .block20 {
+                width:20%;
+                display:inline-block;
+                box-sizing:border-box;
+            }
+            .block40 {
+                width:40%;
+                display:inline-block;
+                box-sizing:border-box;
+            }
+            
+            .block33 {
+                width:33%;
+                display:inline-block;
+                box-sizing:border-box;
+            }
+
+            .btm {
+                width:100%;
+                text-align:center;
+            }
+
+	    .copy {
+		width:100%;
+		padding:60px;
+		text-align:center;
+		color:#fff;
+		font-size:14px;
+	    }
+	    .error {
+		margin-top:20px;
+		display:none;
+	    }
+
+            .success {
+		display:none;
+		font-weight:bold;
+		margin-top:130px;
+		font-size:24px;
+	    }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1 id="header">
+                <span class="container">
+                    <span class="behonest">Будь честен на</span>
+                    <span class="purple-gradient">
+                        <span class="text logo">super5</span>
+                    </span>
+                </span>
+            </h1>
+            <div class="langs">
+                <a href="#">en</a>
+                <a href="#" class="active">ru</a>
+            </div>
+        </div>
+        <div class="content">
+	    <div class="success">
+		Успех! <br/> Мы с вами свяжемся, когда всё будет.
+	    </div>
+            <form onsubmit="event.preventDefault(); send(); return false;">
+                <input  id="email" type="email" />
+                <br />
+		    <div class="error">
+			 Что-то пошло не так
+			 :C
+		    </div>
+                <input type="submit"  id="submit" value="получить приглашение" />
+            </form>
+        </div>
+        <div class="btm">
+            <div 
+                class="apps">
+                <a href="#">
+                    <img src="/assets/app_store.png" />
+                </a>
+                <a href="#">
+                    <img src="/assets/google_play.png" />
+                </a>
+                <div class="soon">
+                    <div>
+                        скоро.
+                    </div>
+                </div>
+        </div>
+	<div class="copy">
+		&copy; super5, 2017
+	</div>
+
+    <script>
+        function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min)) + min;
+        }
+        var current_scroll_int = 0;
+        function scroll(){
+            var textarray = [
+                "Доверяй друзьям на",
+                "Будь честен на",
+                "Оценивай фильмы на"
+            ];
+            var r = getRandomInt(0,3);
+            if (r == current_scroll_int) { if (r==0) r++; else r--;}
+            current_scroll_int = r;
+            var text = textarray[r];
+            var speed = 300;
+            $('.behonest').fadeOut(speed);
+                setTimeout(
+                    ()=>{
+                        $('.behonest').html(text);
+                        $('.behonest').fadeIn(speed);
+                    }
+            ,speed);
+        }
+        setInterval("scroll()" ,5000);
+
+	function send() {
+		var email = $('#email').val();
+		$.post('/',  {
+			email:email
+		}).done(function() {
+			$('.success').fadeIn(300);
+			$('form').hide();
+		}).fail(function() {
+			$('.error').fadeIn(300);
+		});
+	}
+
+    </script>
+    </body>
+</html>
